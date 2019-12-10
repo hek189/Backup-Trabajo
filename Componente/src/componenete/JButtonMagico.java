@@ -17,14 +17,14 @@ import javax.swing.JButton;
  */
 public class JButtonMagico extends JButton implements Serializable {
 
-    private Color color;
+    private Color colorRatonEncima;
 
     public JButtonMagico() {
         Color colorOg = getBackground();
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                setBackground(color);
+                setBackground(colorRatonEncima);
             }
 
             @Override
@@ -35,12 +35,12 @@ public class JButtonMagico extends JButton implements Serializable {
         });
     }
 
-    public Color getColor() {
-        return color;
+    public Color getColorRatonEncima() {
+        return colorRatonEncima;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
+    public void setColorRatonEncima(Color colorRatonEncima) {
+        this.colorRatonEncima = colorRatonEncima;
     }
 
 }
