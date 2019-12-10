@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CosoUSB">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/CosoUSB.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
