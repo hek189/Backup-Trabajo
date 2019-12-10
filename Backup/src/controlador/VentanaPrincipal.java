@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package controlador;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -85,7 +85,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         comboFiltros = new javax.swing.JComboBox<>();
         cbBorrar = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
-        jButtonMagico1 = new compoçao.JButtonMagico();
+        backupButton = new componenete.JButtonMagico();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,11 +122,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setText("Archivos a copiar");
 
-        jButtonMagico1.setText("Hacer Backup");
-        jButtonMagico1.setColor(java.awt.Color.red);
-        jButtonMagico1.addActionListener(new java.awt.event.ActionListener() {
+        backupButton.setText("Hacer Backup");
+        backupButton.setColorRatonEncima(new java.awt.Color(255, 51, 51));
+        backupButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMagico1ActionPerformed(evt);
+                backupButtonActionPerformed(evt);
             }
         });
 
@@ -146,28 +146,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(btEscoger, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btEscoger2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButtonMagico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(avisos)
-                                    .addComponent(espacio)))
-                            .addComponent(salida))
-                        .addGap(39, 39, 39))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 279, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cbBorrar))))
+                                .addComponent(backupButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbBorrar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(avisos)
+                                            .addComponent(espacio)))
+                                    .addComponent(salida))
+                                .addGap(39, 39, 39)))))
                 .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
@@ -185,18 +187,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addComponent(salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btEscoger2)))
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(espacio)
-                    .addComponent(jButtonMagico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(espacio)
+                        .addGap(20, 20, 20)
                         .addComponent(cbBorrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(comboFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))))
+                            .addComponent(jLabel3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backupButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addComponent(avisos)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -244,6 +247,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonMagico1ActionPerformed
 
+    private void backupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backupButtonActionPerformed
+        if (entrada.getText().isEmpty()) {
+            avisos.setText("No has metido ruta de entrada");
+        } else if (salida.getText().isEmpty()) {
+            avisos.setText("No has metido ruta de salida");
+        } else {
+            File rutaEntrada = new File(entrada.getText());
+            File rutaSalida = new File(salida.getText());
+            try {
+                metodos.hacerCopia(rutaEntrada, rutaSalida, cbBorrar.isSelected(), comprobarFiltro());
+            } catch (IOException ex) {
+                Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }    }//GEN-LAST:event_backupButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -282,13 +300,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel avisos;
+    private componenete.JButtonMagico backupButton;
     private javax.swing.JButton btEscoger;
     private javax.swing.JButton btEscoger2;
     private javax.swing.JCheckBox cbBorrar;
     private javax.swing.JComboBox<String> comboFiltros;
     private javax.swing.JFormattedTextField entrada;
     private javax.swing.JLabel espacio;
-    private compoçao.JButtonMagico jButtonMagico1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
